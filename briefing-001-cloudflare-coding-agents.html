@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cloudflare wants coding agents that survive the crash - sunrise</title>
+<meta name="description" content="A new experimental harness runs the Codex agent loop on Cloudflare - and the caveats are the interesting part.">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="brand" href="index.html">
+      <img src="data:image/png;base64,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" alt="sunrise logo" width="34" height="34">
+      <span>sunrise</span>
+    </a>
+    <nav>
+      <a href="index.html">Briefings</a>
+      <a href="about.html">About</a>
+      <a class="sub-btn" href="https://readsunrise.substack.com/">Subscribe</a>
+    </nav>
+  </header>
+
+  <article class="article">
+    <div class="kicker">Briefing 001 &middot; November 9, 2026</div>
+    <h1>Cloudflare wants coding agents that survive the crash</h1>
+    <p class="standfirst">A new experimental harness runs the Codex agent loop on Cloudflare - and the caveats are the interesting part.</p>
+    <div class="meta">By David &Scaron;arl&aacute;k &middot; 4 min read</div>
+
+    <figure>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Datacenter_Server_Racks_(22370909788).jpg/1920px-Datacenter_Server_Racks_(22370909788).jpg" alt="Rows of server racks inside a data center">
+      <figcaption>Server racks in a data center. Photo: <a href="https://commons.wikimedia.org/wiki/File:Datacenter_Server_Racks_(22370909788).jpg">Carl Lender</a>, <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>, via Wikimedia Commons.</figcaption>
+    </figure>
+
+    <p>Today Cloudflare published an experimental example that runs OpenAI's Codex agent loop inside a Cloudflare Durable Object. Conversations, files, and completed model and tool results persist across restarts. After an interruption, the agent resumes from its saved state.</p>
+
+    <p>That matters more than it sounds. Coding agents fail in boring ways: timeouts, restarts, dropped connections. A demo that runs for five minutes is easy. An agent that survives a crash and keeps its state is the actual product problem.</p>
+
+    <h3>How it works</h3>
+    <p>The example adapts Codex's Rust turn-processing code to WebAssembly and builds on four pieces of Cloudflare's Agents SDK:</p>
+    <ul>
+      <li>Tasks journals model calls and tool execution. Completed steps reuse their recorded results after a restart.</li>
+      <li>Sessions stores conversation history and compacts the model context.</li>
+      <li>Streams stores ordered events so a client can replay them after reconnecting.</li>
+      <li>Workspace lets the model read and write persistent files.</li>
+    </ul>
+
+    <h3>The caveats (read this part twice)</h3>
+    <ul>
+      <li>It is experimental. The harness is example code built on internal SDK APIs, not a supported product. A starting point, not a foundation.</li>
+      <li>Recovery is not exactly-once. Completed steps reuse stored results, but an interrupted step - including a model call - can run again. A tool with external side effects, like charging a card or sending a message, needs its own retry and deduplication strategy.</li>
+      <li>It is not free to run. Model calls are billed through Cloudflare's AI Gateway, either with Unified Billing or your own OpenAI API key - even during local development.</li>
+      <li>The example routes are unauthenticated. Cloudflare's own docs say to add authentication before exposing user sessions.</li>
+    </ul>
+
+    <h3>Our read</h3>
+    <p><em>Editorial interpretation, not Cloudflare's claims.</em> Durable execution used to be a backend niche. We read today's release as a signal that in the agent era it becomes a selling point: whoever makes long-running agents reliable - restarts, retries, replay - owns infrastructure every agent product needs. Cloudflare appears to be betting that this layer belongs at the edge.</p>
+    <p>If that read is right, today's release is less a product than a signal: a working coding agent assembled from primitives Cloudflare now ships. In our view, the moat is not the agent loop. It is the durability layer underneath it.</p>
+
+    <div class="sources">
+      <p>Sources: <a href="https://developers.cloudflare.com/changelog/post/2026-11-09-codex-harness/">Cloudflare changelog, Nov 9, 2026</a> and the <a href="https://developers.cloudflare.com/agents/harnesses/codex/">Codex harness guide</a>.</p>
+    </div>
+
+    <a class="back" href="index.html">&larr; All briefings</a>
+  </article>
+
+  <div class="subscribe">
+    <div>
+      <h3>Get Sunrise in your inbox</h3>
+      <p>Every briefing on this blog also goes out as the Sunrise newsletter on Substack. Free.</p>
+    </div>
+    <a href="https://readsunrise.substack.com/">Subscribe on Substack</a>
+  </div>
+
+  <footer>
+    <span>sunrise &middot; Business, markets &amp; technology</span>
+    <span>By David &Scaron;arl&aacute;k</span>
+  </footer>
+</div>
+</body>
+</html>
