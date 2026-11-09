@@ -53,3 +53,8 @@ footer { border-top:1px solid var(--line); padding:26px 0 40px; color:var(--dim)
   nav a:not(.sub-btn){display:none}
   .article p, .article li { font-size:16px; }
 }
+
+/* listen player */
+.listen { margin:4px 0 32px; padding:14px 18px; border:1px solid var(--line); border-radius:12px; display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+.listen-label { font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--dim); white-space:nowrap; }
+.listen audio { flex:1; min-width:220px; height:38px; }
