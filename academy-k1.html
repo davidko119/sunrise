@@ -232,7 +232,7 @@ quiz("triage",{
  pass:function(s){return s>=5;},
  done:function(s,n){return "Výsledok: "+s+" z "+n+". "+(s>=5?"Výborne, hranice modelu máš v ruke.":"Nič sa nedeje. Pravidlo: dátum tréningu, kontextové okno a počítanie sú tri miesta, kde model potrebuje pomoc.");}
 });
-quiz("tech",{
+quiz("techquiz",{
  title:"Ktorá technika sa hodí?",
  items:D.tech.items,options:D.tech.opts,
  lead:function(i,n){return "Situácia "+(i+1)+" z "+n+":";},
@@ -242,7 +242,7 @@ quiz("tech",{
  pass:function(s){return s>=3;},
  done:function(s,n){return "Výsledok: "+s+" z "+n+". "+(s>=3?"Techniky použiješ správne.":"Spomeň si: štýl = príklady, veľká úloha = rozklad, uvažovanie = písomná úvaha.");}
 });
-quiz("safe",{
+quiz("safequiz",{
  title:"Čo môžeš vložiť do AI chatu?",
  items:D.safe,options:["Bezpečné","Nevkladať"],
  lead:function(i,n){return (i+1)+" z "+n+":";},
