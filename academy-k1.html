@@ -201,7 +201,7 @@ function quiz(sel,cfg){
    if(!done){
     var it=cfg.items[idx];
     var q=el("p",null);q.appendChild(document.createTextNode(cfg.lead(idx,cfg.items.length)+" "));
-    var st=el("strong",null,it.q);q.appendChild(st);box.appendChild(q);
+    var st=el("strong",null,it.q||it.t);q.appendChild(st);box.appendChild(q);
     var opts=el("div","opts");
     cfg.options.forEach(function(c,i){
      var good=cfg.isGood(it,i);
