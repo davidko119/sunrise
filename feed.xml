@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel>
+<title>sunrise - briefings on business, markets &amp; technology</title>
+<link>https://sunrisehq.online/</link>
+<description>Sunrise is a briefing on business, markets and technology.</description>
+<language>en</language>
+<item><title>Cloudflare wants coding agents that survive the crash</title>
+<link>https://sunrisehq.online/briefing-001-cloudflare-coding-agents.html</link>
+<guid>https://sunrisehq.online/briefing-001-cloudflare-coding-agents.html</guid>
+<pubDate>Mon, 09 Nov 2026 00:00:00 +0000</pubDate>
+<description>A new experimental harness runs the Codex agent loop on Cloudflare - and the caveats are the interesting part.</description></item>
+</channel></rss>
